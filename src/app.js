@@ -25,17 +25,23 @@ app.use(bodyparser({
 }))
 app.use(json())
 
-app.use(historyApiFallback({ whiteList: ['/api'] }))
+app.use(historyApiFallback({ whiteList: ['/api',"/"] }))
 // app.use(require('koa-static')('./logs'))
 
 //多个路由
 app.use(require('koa-static-router')([
   {
   dir:'screenImgs',    
-  router:'/screenImgs/'   //路由命名   路由长度 =2
+  router:'/screenImgs/'  
 },{
-  dir:'logs',   //静态资源目录对于相对入口文件index.js的路径
-  router:'/logs/'    //路由命名  路由长度 =2
+  dir:'logs',  
+  router:'/logs/'    
+},{
+  dir:'src/public',   
+  router:'/public/'    
+},{
+  dir:'pdfs',   
+  router:'/pdfs/' 
 }
 ]))
 

@@ -3,10 +3,12 @@ import File from './file'
 const path = require('path')
 
 function deleteImgSchedule() {
-  schedule.scheduleJob('0 0 12 * * *', function () {
+  schedule.scheduleJob('0 0 0 * * *', function () {
     const filePath=path.join('./screenImgs')
+    const pdfPath=path.join('./pdfs')
     File.deleteFolder(filePath)
-    logger.info(`删除图片成功！~`)
+    File.deleteFolder(pdfPath)
+    logger.info(`删除成功！~`)
   });
 }
 

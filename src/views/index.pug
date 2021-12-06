@@ -2,3 +2,18 @@ extends layout
 
 block content
   h3= title
+  div(class='api-infos') 
+    each api in apis 
+      div(class='api-info') 
+        span(class='api-info-item') #{api.detail}
+        a(class='api-info-path' href=host+api.path) #{api.path}
+        span(class='api-info-item info-method') #{api.method}
+        span(class='api-info-item info-params') #{api.params}
+  h3= "已截取图片"      
+  div(class='items')       
+    each img in imgs 
+      a(class='item' href=host+"/screenImgs/"+img) #{img}
+  h3= "已截取pdf"      
+  div(class='items')       
+    each pdf in pdfs 
+      a(class='item' href=host+"/pdfs/"+pdf) #{pdf}

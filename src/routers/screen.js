@@ -9,5 +9,7 @@ const router = new Router({
 })
 
 router.get('/getScreenshots', Screen.GetScreenshots)
+router.get('/getScreenfast', Screen.GetScreenFast)
+router.get('/getPdf', Screen.GetPdf)
 
 export default router
