@@ -1,0 +1,12 @@
+{
+  "apps": [{
+    "name": "screenshots",
+    "script": "./build/server.js",
+    "exec_mode": "cluster",
+    "instance_var": "INSTANCE_ID",
+    "node_args": "--nouse_idle_notification --max-old-space-size=2048",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }]
+}
